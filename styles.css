@@ -1,0 +1,154 @@
+/* Basic styles for the example template */
+body {
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  margin: 0;
+  background: #d6c0b3;
+  color: #333;
+}
+
+/* Panel to match reference proportions */
+.panel {
+  width: 920px;
+  max-width: 94%;
+  margin: 32px auto;
+  padding: 56px 64px;
+  /* subtle warm tint so panel blends with page but still reads as a card */
+  background: rgba(214,192,179,0.03);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.panel {
+  width: 920px;
+  max-width: 94%;
+  margin: 32px auto;
+  /* make panel a column flex container so we can pin the button to the bottom */
+  display: flex;
+  flex-direction: column;
+  /* ensure there's vertical space so the button can sit lower */
+  min-height: 460px;
+  padding: 56px 64px;
+  /* subtle warm tint so panel blends with page but still reads as a card */
+  background: rgba(214,192,179,0.03);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #54473f;
+  font-size: 70px; /* keep the title size you liked */
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+h2 {
+  color: #54473f;
+  text-align: center;
+  font-size: 40px;
+  font-style: italic;
+  margin: 0 0 36px 0;
+}
+
+/* Row: label + input aligned horizontally with consistent proportions */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  /* increase vertical spacing slightly (about +5px) between rows */
+  margin: 45px 0;
+}
+
+/* Two-column layout for name fields */
+.two-columns {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.name-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 0;
+}
+
+.name-group .fontStyle {
+  min-width: auto; /* allow label to size naturally here */
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.small-input {
+  min-width: 200px;
+  max-width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 18px;
+  border: 4px solid rgba(119,76,59,0.35);
+  background: #efe9e9;
+}
+
+.centered { /* keeps legacy use but ensures left alignment within panel */
+  display: flex;
+  align-items: center;
+}
+
+.fontStyle {
+  font-size: 28px; /* larger label text */
+  font-weight: 700;
+  color: #54473f;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  min-width: 260px; /* labels occupy fixed space so inputs align */
+}
+
+/* Inputs styled to match the rounded pill look in your reference */
+input[type="text"],
+input[type="password"] {
+  min-width: 420px;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 22px;
+  border: 6px solid #9a7e6f;
+  background: #efe9e9;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  font-style: italic;
+  color: #8a7b78;
+}
+
+/* Button style (kept as you liked) but proportionally larger */
+button {
+  background-color: #9a7e6f;
+  color: white;
+  border: 2px solid #9a7e6f;
+  border-radius: 22px;
+  padding: 14px 36px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.bottom-center {
+  display: flex;
+  justify-content: center;
+  /* push the button down to the bottom of the panel */
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+/* Make the form fill available vertical space so margin-top: auto works */
+form[th\:action] {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+/* Minor responsive tweak */
+@media (max-width: 700px) {
+  .row { flex-direction: column; align-items: stretch; }
+  .fontStyle { min-width: auto; text-align: left; }
+  input[type="text"], input[type="password"] { min-width: 100%; }
+}
