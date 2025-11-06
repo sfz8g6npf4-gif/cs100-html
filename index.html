@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title th:text="${title}">BearBanking</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    </head>
+    <body>
+        <div class="panel">
+            <h1>Welcome to Bear Banking!</h1>
+            <h2>Please enter your login information :</h2>
+
+            <form id="loginForm" th:action="@{/login}" method="post">
+                <div class="row centered">
+                    <label for="username" class="fontStyle">Username :</label>
+                    <input type="text" id="username" name="username" placeholder="enter username" required />
+                </div>
+
+                <div class="row centered">
+                    <label for="password" class="fontStyle">Password :</label>
+                    <input type="password" id="password" name="password" placeholder="enter password" required />
+                </div>
+                <div class="row centered">
+                    <label for="signup" class="fontStyle">New user? </label>
+                    <a th:href="@{/signup}" class="fontStyle">Sign up here!</a>
+                </div>
+
+                <div class="bottom-center">
+                    <!-- Use a button that calls the form by id, submits it, then navigates to the dashboard. -->
+                    <button type="button" th:onclick="|document.getElementById('loginForm').submit(); window.location.href='@{/dashboard}';|">Log In</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
