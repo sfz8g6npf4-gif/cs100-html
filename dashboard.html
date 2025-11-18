@@ -6,12 +6,51 @@
         <link rel="stylesheet" th:href="@{/css/styles.css}" />
     </head>
     <body>
-        <div class="panel">
-            <div class="backButton">
-                <button onclick="history.back()">Log Out</button>
+        <div class="dashboard-container">
+            <div class="header">
+                <button class="log-out-btn" onclick="history.back()">Log Out</button>
+                <h1><span th:text="${username}">User</span>'s Dashboard</h1>
+                
             </div>
-            <h1>Dashboard</h1>
-            <h2>Welcome to your Bear Banking dashboard!</h2>
+
+            <div class="main-content">
+                <div class="transactions-section">
+                    <h2>Recent Transactions:</h2>
+                    <div class="transaction-list">
+                        <div class="transaction">
+                            <span class="description">Lorem Ipsum</span>
+                            <span class="dots">.....</span>
+                            <span class="amount negative">-2.73</span>
+                        </div>
+                        <div class="transaction">
+                            <span class="description">Lorem Ipsum</span>
+                            <span class="dots">.....</span>
+                            <span class="amount positive">+7.82</span>
+                        </div>
+                        <div class="transaction">
+                            <span class="description">Lorem Ipsum</span>
+                            <span class="dots">.....</span>
+                            <span class="amount positive">+5.12</span>
+                        </div>
+                        <div class="transaction">
+                            <span class="description">Lorem Ipsum</span>
+                            <span class="dots">.....</span>
+                            <span class="amount negative">-9.36</span>
+                        </div>
+                    </div>
+
+                    <div class="balance-section">
+                        <h2>Balance : <span class="balance-amount">$34.21</span></h2>
+                    </div>
+                </div>
+
+                <div class="actions-menu">
+                    <button class="action-btn" onclick="window.location.href='/add-funds'">Add Funds</button>
+                    <button class="action-btn" onclick="window.location.href='/recurring-deposit'">Add Recurring Deposit</button>
+                    <button class="action-btn" onclick="window.location.href='/transaction'">Single Payment</button>
+                    <button class="action-btn" onclick="window.location.href='/recurring-payment'">Add Recurring Payment</button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
