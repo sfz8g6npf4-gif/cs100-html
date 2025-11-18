@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Transaction - BearBanking</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    </head>
+    <body>
+        <div class="deposit-container">
+            <button class="back-btn" onclick="history.back()">Back</button>
+            <h1>Make a Transaction</h1>
+
+            <form th:action="@{/transaction}" method="post" class="deposit-form">
+                <label for="recipient" class="deposit-label">Who are you paying?</label>
+                <input type="text" id="recipient" name="recipient" placeholder="enter recipient" required class="deposit-input" />
+
+                <label for="amount" class="deposit-label">Amount :</label>
+                <input type="number" id="amount" name="amount" step="0.01" min="0" placeholder="enter amount" required class="deposit-input" />
+
+                <label for="note" class="deposit-label">Note (optional):</label>
+                <input type="text" id="note" name="note" placeholder="e.g. rent, groceries" class="deposit-input" />
+
+                <button type="submit" class="deposit-submit-btn">Submit Transaction</button>
+            </form>
+            <h2>Is this a subscription? <a th:href="@{/subscription}">Click here!</a></h2>
+        </div>
+    </body>
+</html>

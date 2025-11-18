@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Deposit - BearBanking</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    </head>
+    <body>
+        <div class="deposit-container">
+            <button class="back-btn" onclick="history.back()">Back</button>
+            <h1>Deposit</h1>
+
+            <form th:action="@{/add-funds}" method="post" class="deposit-form">
+                <label for="amount" class="deposit-label">Amount to Deposit :</label>
+                <input type="number" id="amount" name="amount" step="0.01" min="0" placeholder="enter amount" required class="deposit-input" />
+
+                <button type="submit" class="deposit-submit-btn">Add Funds</button>
+            </form>
+            <h2>Is this a recurring deposit? <a href="/recurring-deposit" class="recurring-link">Click Here!</a></h2>
+        </div>
+    </body>
+</html>

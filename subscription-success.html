@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Subscription Scheduled - BearBanking</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    </head>
+    <body>
+        <div class="deposit-container">
+            <h1>Subscription Scheduled!</h1>
+            <p class="success-message">Your recurring transaction (subscription) has been set up successfully.</p>
+
+            <div class="success-actions">
+                <button type="button" class="action-btn" th:onclick="|window.location.href='@{/dashboard}'|">Back to Dashboard</button>
+            </div>
+        </div>
+    </body>
+</html>
